@@ -134,7 +134,6 @@ export const useReservationStore = create<ReservationState>((set, get) => ({
     
     try {
       saveReservation(newReservation as any);
-      get().resetForm();
       return reservationId;
     } catch (error) {
       if (error instanceof Error) {

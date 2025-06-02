@@ -1,92 +1,93 @@
-이 프로젝트는 [`EasyNext`](https://github.com/easynext/easynext)를 사용해 생성된 [Next.js](https://nextjs.org) 프로젝트입니다.
+# 미용실 예약 웹페이지
 
-## Getting Started
+## 프로젝트 개요
+이 프로젝트는 미용실 예약을 위한 웹 애플리케이션입니다. 사용자가 시술을 선택하고, 스타일리스트를 선택하며, 날짜와 시간을 예약할 수 있는 직관적인 인터페이스를 제공합니다.
 
-개발 서버를 실행합니다.<br/>
-환경에 따른 명령어를 사용해주세요.
+## 주요 기능
 
+### 1. 예약 프로세스
+- **시술 선택**
+  - 다양한 시술 목록 제공
+  - 각 시술의 상세 정보 및 가격 표시
+  - 시술 선택 시 유효성 검사
+
+- **스타일리스트 선택**
+  - 스타일리스트 목록 제공
+  - 각 스타일리스트의 전문 분야 및 경력 표시
+  - 스타일리스트 선택 시 유효성 검사
+
+- **날짜/시간 선택**
+  - 캘린더를 통한 직관적인 날짜 선택
+  - 선택된 날짜의 가능한 시간대 표시
+  - 과거 날짜 선택 방지
+  - 시간 선택 시 유효성 검사
+
+- **고객 정보 입력**
+  - 이름 입력
+  - 전화번호 입력 (자동 포맷팅: 010-1234-5678)
+  - 입력 정보 유효성 검사
+
+### 2. 예약 관리
+- **예약 완료 프로세스**
+  - 예약 정보 최종 확인
+  - 예약 완료 시 고유 예약 번호 발급
+  - 예약 완료 알림 표시
+  - 메인 페이지로 자동 이동
+
+- **예약 조회**
+  - 예약 번호로 예약 정보 조회
+  - 예약 상태 확인 (대기중, 확정, 취소 등)
+
+### 3. 관리자 기능
+- **예약 관리**
+  - 전체 예약 목록 조회
+  - 예약 상태 변경 (확정/취소)
+  - 예약 정보 수정
+
+- **스타일리스트 관리**
+  - 스타일리스트 정보 등록/수정/삭제
+  - 스타일리스트별 예약 현황 조회
+
+### 4. 사용자 인터페이스
+- **반응형 디자인**
+  - 모바일, 태블릿, 데스크톱 지원
+  - 직관적인 UI/UX
+
+- **단계별 예약 프로세스**
+  - 진행 상태 표시
+  - 이전/다음 단계 이동
+  - 각 단계별 유효성 검사
+
+## 기술 스택
+- **프론트엔드**
+  - Next.js
+  - React
+  - TypeScript
+  - Tailwind CSS
+  - shadcn/ui
+
+- **상태 관리**
+  - Zustand
+
+- **유틸리티**
+  - UUID (고유 ID 생성)
+  - 날짜/시간 포맷팅
+
+## 설치 및 실행
 ```bash
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# 프로덕션 빌드
+npm run build
 ```
 
-브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 결과를 확인할 수 있습니다.
+## 환경 설정
+- Node.js 18.0.0 이상
+- npm 9.0.0 이상
 
-`app/page.tsx` 파일을 수정하여 페이지를 편집할 수 있습니다. 파일을 수정하면 자동으로 페이지가 업데이트됩니다.
-
-## 기본 포함 라이브러리
-
-- [Next.js](https://nextjs.org)
-- [React](https://react.dev)
-- [Tailwind CSS](https://tailwindcss.com)
-- [TypeScript](https://www.typescriptlang.org)
-- [ESLint](https://eslint.org)
-- [Prettier](https://prettier.io)
-- [Shadcn UI](https://ui.shadcn.com)
-- [Lucide Icon](https://lucide.dev)
-- [date-fns](https://date-fns.org)
-- [react-use](https://github.com/streamich/react-use)
-- [es-toolkit](https://github.com/toss/es-toolkit)
-- [Zod](https://zod.dev)
-- [React Query](https://tanstack.com/query/latest)
-- [React Hook Form](https://react-hook-form.com)
-- [TS Pattern](https://github.com/gvergnaud/ts-pattern)
-
-## 사용 가능한 명령어
-
-한글버전 사용
-
-```sh
-easynext lang ko
-```
-
-최신버전으로 업데이트
-
-```sh
-npm i -g @easynext/cli@latest
-# or
-yarn add -g @easynext/cli@latest
-# or
-pnpm add -g @easynext/cli@latest
-```
-
-Supabase 설정
-
-```sh
-easynext supabase
-```
-
-Next-Auth 설정
-
-```sh
-easynext auth
-
-# ID,PW 로그인
-easynext auth idpw
-# 카카오 로그인
-easynext auth kakao
-```
-
-유용한 서비스 연동
-
-```sh
-# Google Analytics
-easynext gtag
-
-# Microsoft Clarity
-easynext clarity
-
-# ChannelIO
-easynext channelio
-
-# Sentry
-easynext sentry
-
-# Google Adsense
-easynext adsense
-```
+## 라이선스
+MIT License
